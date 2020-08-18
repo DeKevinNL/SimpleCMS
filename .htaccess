@@ -1,0 +1,18 @@
+RewriteEngine On
+
+RewriteRule ^([^.]*)$ index.php
+RewriteRule ^avatar-generator/([^/]*)\.png$ /avatar-generator/avatarimage.php?f$
+
+<Files ~ "\.(?:php|swp|php.save)$">
+Deny from all
+</Files>
+
+<Files index.php>
+Allow from all
+</Files>
+
+<Files youtube.php>
+Allow from all
+</Files>
+
+ErrorDocument 404 /index.php
